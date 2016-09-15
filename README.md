@@ -1,0 +1,2 @@
+# HsCSearch
+Hearthstone Card Search
