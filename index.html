@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hearthstone Card Search</title>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <script src="./node_modules/jquery-3.1.0.min.js"></script>
+    <script src="./node_modules/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-latest.js"></script>
+    <script type="text/javascript" src="./js/jquery.tablesorter.js"></script>
+
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body>
+    <!-- load facebook SDK for javascript-->
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <h1 class="page-header">Hearthstone Card Finder</h1>
+    <h2 class="sub-header">Card Searches
+        <input type="text" id="search">
+        <div style="display:inline-block" id="searchbutton">
+            <button type="button" class="btn btn-default" onclick="searchButton(document.getElementById('search').value)">Search</button>
+            <div id="fb-root"></div>
+        </div>
+        <!-- share button>-->
+        <div class="fb-share-button" data-href="http://module2-az.azurewebsites.net" data-layout="box_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmodule2-az.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div>
+        </div>
+    </h2>
+    <!-- table-->
+    <table id="cardTable" class="tablesorter">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Card ID</th>
+                <th>Card Set</th>
+                <th>Type</th>
+                <th>Rarity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- information obtained
+                <th>Card ID</th>
+                <th>Name</th>
+                <th>Card Set</th>
+                <th>Type</th>
+                <th>Rarity</th>
+                -->
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+<script>
+    $(document).ready(function() {
+        $("#cardTable").tablesorter();
+    });
+</script>
